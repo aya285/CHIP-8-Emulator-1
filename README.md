@@ -1,7 +1,7 @@
 # Basic Implementation of Emulator/Interpreter on Python
 
 
-As you saw in the ICS course, it is possible to build our own virtual machine in our computers just by programming, 
+As we saw in the ICS course, it is possible to build our own virtual machine in our computers just by programming, 
 so I got the idea to try to implement a theoretical machine with less than 50 instructions.
 So CHIP8 was the best choice. It is not really a physical machine but an interpreter which runs its programs
 in a virtual machine.
@@ -115,7 +115,7 @@ The log() is just a log messages function to allow the user to know that the ROM
 
 After all those instructions executed, we can now start processing the program.
 
-1. *The cycle()*
+<ins>1. The cycle()
 
 Each cycle is made this way: 
     
@@ -174,7 +174,7 @@ they are usually in the format XXXX. So basically we can decipher (aka decrypt) 
 >
 > self.pc is incremented BEFORE cycle(), so any modification to it are retained (This basically works like the **jal, jalr and beq**)
 
-<ins>1. Sample Instruction: clear a screen with 00E0 and return with 00EE<\ins>
+<ins>2. Sample Instruction: clear a screen with 00E0 and return with 00EE
 
 Here, we are going to implement the first and simplest instruction: clear the screen.
 This corresponds to the opcode0x00E0.
@@ -215,7 +215,7 @@ Well, we actually could have, but 0x0xxx are special instructions, as they don't
 The last three nibbles are the ones which contains inputs to the operation, and they aren't constants, so they can be mapped as well.
 For instance, let dig further in the JUMP opcode: 
 
-<ins>2. Sample instruction: JUMPing with 1XXX:
+<ins>3. Sample instruction: JUMPing with 1XXX:
 
 The JUMP opcode works exactly as jal and jarl as we saw with selfie.c
 The opcode starts with 1, and the following three nibbles are corresponding to the address of the instruction to be executed next.
